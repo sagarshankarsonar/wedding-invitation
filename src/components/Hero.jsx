@@ -35,7 +35,7 @@ export default function Hero({ onOpenRsvp }) {
         </p>
 
         <h1 className="text-4xl md:text-7xl font-serif text-rani-gradient font-bold mb-4 leading-tight">
-          सागर <span className="font-script text-gold-600 text-5xl md:text-8xl px-2">&</span> {'\u00A0'} प्रियंका
+          सागर <span className="font-script text-gold-600 text-5xl md:text-8xl px-2">&</span>  प्रियंका
         </h1>
 
         <div className="w-32 h-[2px] bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto my-6" />
