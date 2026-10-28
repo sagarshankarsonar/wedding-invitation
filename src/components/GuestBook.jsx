@@ -16,7 +16,7 @@ export default function GuestBook() {
   const [showAdminLogin, setShowAdminLogin] = useState(false);
   const [passcode, setPasscode] = useState("");
 
-  const ADMIN_PASSCODE = "sagar2026";
+  const ADMIN_PASSCODE = "piyu143";
 
   // Fetch messages from Supabase on load
   useEffect(() => {
