@@ -50,7 +50,7 @@ export default function Events() {
 
               <button
                 onClick={() => downloadIcs(evt)}
-                className="w-full py-3.5 rounded-xl bg-rani-700 text-rani-800/80 text-xs font-bold flex items-center justify-center gap-2 hover:bg-rani-800 transition shadow-md"
+                className="w-full py-3.5 rounded-xl bg-rani-800 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-rani-800 transition shadow-md"
               >
                 <CalendarPlus className="w-4 h-4" /> कॅलेंडरमध्ये सेव्ह करा 📅
               </button>
