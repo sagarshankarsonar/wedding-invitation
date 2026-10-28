@@ -122,7 +122,7 @@ export default function GuestBook() {
       <div className="grid md:grid-cols-2 gap-10">
         <form onSubmit={handleSubmit} className="bg-glass-light p-6 md:p-8 rounded-3xl border border-gold-500/30 space-y-4 shadow-md">
           <h3 className="text-xl font-serif text-rani-900 font-semibold mb-2 flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-gold-600" /> तुमची शुभेच्छुक प्रतिक्रिया लिहा ✨
+            तुमची शुभेच्छुक प्रतिक्रिया लिहा ✨
           </h3>
 
           <div>
