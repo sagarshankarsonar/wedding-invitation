@@ -5,25 +5,22 @@
 @tailwind utilities;
 
 @layer utilities {
-  .text-cream-gradient {
-    background: linear-gradient(135deg, #FFFEFA 0%, #F5F0E6 50%, #D4AF37 100%);
+  .text-rani-gradient {
+    background: linear-gradient(135deg, #E0115F 0%, #B80C4E 50%, #5B0627 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  .bg-glass-rani {
-    background: rgba(91, 6, 39, 0.78);
+  
+  /* उजळ लाईट थीमसाठी सुंदर ग्लास कार्ड */
+  .bg-glass-light {
+    background: rgba(255, 254, 250, 0.85);
     backdrop-filter: blur(14px);
-    border: 1px solid rgba(245, 240, 230, 0.25);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 10px 30px rgba(91, 6, 39, 0.08);
   }
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #3D0218;
-}
-::-webkit-scrollbar-thumb {
-  background: #D4AF37;
-  border-radius: 4px;
+body {
+  background-color: #FFFEFA;
+  color: #5B0627;
 }
