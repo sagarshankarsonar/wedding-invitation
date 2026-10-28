@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
 import { Send, Sparkles, Trash2, ShieldCheck, Key } from "lucide-react";
+import { supabase } from "@/utils/supabase"; // Import supabase client
 
 const EMOJI_OPTIONS = ["❤️", "💐", "🎉", "🎊", "✨", "💌", "🎁", "🙌", "🎀", "🙂"];
 
@@ -15,68 +16,64 @@ export default function GuestBook() {
   const [showAdminLogin, setShowAdminLogin] = useState(false);
   const [passcode, setPasscode] = useState("");
 
-  const ADMIN_PASSCODE = "piyu143";
+  const ADMIN_PASSCODE = "sagar2026";
 
+  // Fetch messages from Supabase on load
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get("admin") === "true") {
       setIsAdmin(true);
     }
 
-    const saved = localStorage.getItem("wedding_wishes_marathi_v1");
-    if (saved) {
-      setMessages(JSON.parse(saved));
-    } else {
-      setMessages([
-        {
-          id: 1,
-          name: "मोहन व सीमाबाई सोनार",
-          text: "💐 सागर आणि प्रियंका तुम्हा दोघांनाही वैवाहिक आयुष्याच्या मनःपूर्वक शुभेच्छा! तुमचा संसार सुख-समृद्धीने नांदो 🎉, जोडी अशीच सदैव आनंदी राहो ✨",
-          emoji: "❤️",
-          date: "०१ नोव्हेंबर",
-        }
-      ]);
-    }
+    fetchMessages();
   }, []);
 
-  const saveMessages = (newList) => {
-    setMessages(newList);
-    localStorage.setItem("wedding_wishes_marathi_v1", JSON.stringify(newList));
+  const fetchMessages = async () => {
+    const { data, error } = await supabase
+      .from("wedding_wishes")
+      .select("*")
+      .order("id", { ascending: false });
+
+    if (error) {
+      console.error("Error fetching messages:", error);
+    } else {
+      setMessages(data || []);
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!name.trim() || !wishes.trim()) return;
 
     const newMessage = {
-      id: Date.now(),
       name: name.trim(),
       text: `${selectedEmoji} ${wishes.trim()}`,
       emoji: selectedEmoji,
-      date: new Date().toLocaleDateString("mr-IN", { month: "short", day: "numeric" }),
+      date: new Date().toLocaleDateString("en-IN", { month: "short", day: "numeric" }),
     };
 
-    saveMessages([newMessage, ...messages]);
-    setName("");
-    setWishes("");
+    // Insert into Supabase
+    const { error } = await supabase.from("wedding_wishes").insert([newMessage]);
 
-    confetti({ particleCount: 90, spread: 70, origin: { y: 0.75 } });
-  };
-
-  const handleDelete = (id) => {
-    if (confirm("तुम्हाला हा संदेश खरोखर डिलीट करायचा आहे का?")) {
-      saveMessages(messages.filter((msg) => msg.id !== id));
+    if (error) {
+      console.error("Error posting wish:", error);
+      alert("संदेश पाठवण्यात अडचण आली. कृपया पुन्हा प्रयत्न करा.");
+    } else {
+      setName("");
+      setWishes("");
+      confetti({ particleCount: 90, spread: 70, origin: { y: 0.75 } });
+      fetchMessages(); // Refresh list
     }
   };
 
-  const handleAdminAuth = (e) => {
-    e.preventDefault();
-    if (passcode === ADMIN_PASSCODE) {
-      setIsAdmin(true);
-      setShowAdminLogin(false);
-      setPasscode("");
-    } else {
-      alert("पासकोड चुकीचा आहे, पुन्हा प्रयत्न करा!(हा अधिकार फक्त ऍडमीन साठी आहे)");
+  const handleDelete = async (id) => {
+    if (confirm("तुम्हाला हा संदेश खरोखर डिलीट करायचा आहे का?")) {
+      const { error } = await supabase.from("wedding_wishes").delete().eq("id", id);
+      if (error) {
+        console.error("Error deleting message:", error);
+      } else {
+        fetchMessages(); // Refresh list
+      }
     }
   };
 
