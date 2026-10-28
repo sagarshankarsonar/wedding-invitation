@@ -32,7 +32,7 @@ export default function Countdown() {
 
   return (
     <section className="py-16 bg-rani-900/40 border-y border-gold-500/20 text-center">
-      <h2 className="text-cream-200 font-script text-3xl mb-2">अनंतकाळाच्या दिशेने वाटचाल ⏳</h2>
+      <h2 className="text-cream-200 font-script text-3xl mb-2">अनंतकाळाच्या दिशेने वाटचाल timer⏰⏳</h2>
       <p className="text-xs uppercase tracking-widest text-cream-300/70 mb-8"> प्रत्येक क्षण आम्हाला एकमेकांच्या अधिक जवळ घेऊन येत आहे✨</p>
       
       <div className="flex flex-wrap justify-center gap-4 md:gap-8 max-w-4xl mx-auto px-4">
