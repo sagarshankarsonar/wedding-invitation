@@ -15,7 +15,7 @@ export default function Home() {
   const [isRsvpOpen, setIsRsvpOpen] = useState(false);
 
   return (
-    <main className="relative min-h-screen overflow-hidden">
+    <main className="relative min-h-screen overflow-hidden bg-cream-50">
       <FloatingPetals />
       <Hero onOpenRsvp={() => setIsRsvpOpen(true)} />
       <Countdown />
@@ -25,10 +25,10 @@ export default function Home() {
       <Location />
       <GuestBook />
 
-      {/* फुटर - पूर्णपणे मराठीत आणि स्पष्ट दृश्यमान */}
-      <footer className="py-8 text-center text-xs md:text-sm text-cream-100 font-semibold border-t border-gold-500/30 bg-rani-950">
-        <p>🙏 सस्नेह सहर्ष स्वागत 🌸🌼 • सोनार परिवार, मुक्ताईनगर 🙏</p>
-        <p className="mt-1 text-gold-400">सागर आणि प्रियंका यांच्या शुभविवाह सोहळ्याकरिता निमंत्रित 💌✨</p>
+      {/* फुटर - `#E30B5C` थीम आणि पूर्ण मराठीत */}
+      <footer className="py-8 text-center text-xs md:text-sm text-cream-50 font-semibold border-t border-gold-400/40 bg-[#E30B5C]">
+        <p> 🙏 सस्नेह सहर्ष स्वागत 🌸🌼• सोनार परिवार 🙏 </p>
+        <p className="mt-1 text-gold-300">सागर आणि प्रियंका यांच्या शुभविवाह सोहळ्याकरिता निमंत्रित 💌✨</p>
       </footer>
 
       <RsvpModal isOpen={isRsvpOpen} onClose={() => setIsRsvpOpen(false)} />
