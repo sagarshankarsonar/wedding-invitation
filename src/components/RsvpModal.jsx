@@ -57,7 +57,7 @@ export default function RsvpModal({ isOpen, onClose }) {
               <input type="number" min="1" defaultValue="1" className="w-full bg-cream-50 border border-gold-500/60 rounded-xl p-3 text-sm text-rani-950 font-medium focus:outline-none focus:border-rani-700" />
             </div>
 
-            <button type="submit" className="w-full py-3.5 bg-rani-700 text-white font-bold rounded-xl shadow-lg hover:bg-rani-800 transition mt-2">
+            <button type="submit" className="w-full py-3.5 bg-rani-700 text-rani-800/80 font-bold rounded-xl shadow-lg hover:bg-rani-800 transition mt-2">
               उपस्थिती कन्फर्म करा ✨
             </button>
           </form>
