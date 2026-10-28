@@ -15,7 +15,7 @@ export default function GuestBook() {
   const [showAdminLogin, setShowAdminLogin] = useState(false);
   const [passcode, setPasscode] = useState("");
 
-  const ADMIN_PASSCODE = "sagar2026";
+  const ADMIN_PASSCODE = "piyu143";
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -76,7 +76,7 @@ export default function GuestBook() {
       setShowAdminLogin(false);
       setPasscode("");
     } else {
-      alert("पासकोड चुकीचा आहे, पुन्हा प्रयत्न करा!(हे फक्त ऍडमीन साठी आहे)");
+      alert("पासकोड चुकीचा आहे, पुन्हा प्रयत्न करा!(हा अधिकार फक्त ऍडमीन साठी आहे)");
     }
   };
 
