@@ -6,8 +6,7 @@ export default function Hero({ onOpenRsvp }) {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center p-6 overflow-hidden bg-gradient-to-b from-cream-100 via-cream-200 to-amber-50 text-rani-950">
       {/* वरच्या बाजूला गोल गणेश प्रतिमा */}
-      <motion.div 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
