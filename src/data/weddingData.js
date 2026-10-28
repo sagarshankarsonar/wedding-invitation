@@ -1,13 +1,13 @@
 export const weddingDetails = {
   groom: {
     name: "सागर शंकर सोनार",
-    title: "वर (क्रीम रंगाची शेरवानी 🧥)",
+    title: "वर",
     parents: "सुपुत्र: श्री. शंकर सोनार",
     image: "/images/groom.jpg",
   },
   bride: {
     name: "प्रियंका राजेंद्र सोनार",
-    title: "वधू (रानी रंगाचा लेहंगा 🎀)",
+    title: "वधू",
     parents: "सुपुत्री: श्री. राजेंद्र सोनार",
     image: "/images/bride.jpg",
   },
