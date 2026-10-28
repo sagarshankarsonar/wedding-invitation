@@ -17,11 +17,11 @@ export default function Events() {
   };
 
   return (
-    <section id="events" className="py-20 px-6 bg-rani-900/30">
+    <section id="events" className="py-20 px-6 bg-cream-100 text-rani-950">
       <div className="max-w-4xl mx-auto text-center">
-        <p className="text-cream-200 font-script text-3xl mb-2">उत्सव कार्यक्रम 🎊</p>
-        <h2 className="text-3xl md:text-5xl font-serif text-cream-gradient font-bold mb-12">
-         🎷 लग्न कार्यक्रम ✨
+        <p className="text-gold-700 font-script text-3xl mb-2 font-bold">उत्सव कार्यक्रम 🎊</p>
+        <h2 className="text-3xl md:text-5xl font-serif text-rani-950 font-extrabold mb-12">
+          लग्न सोहळा व कार्यक्रम ✨
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -31,28 +31,28 @@ export default function Events() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.2 }}
-              className="bg-glass-rani rounded-3xl p-8 border border-gold-500/30 text-left flex flex-col justify-between"
+              className="bg-white rounded-3xl p-8 border-2 border-gold-500/40 text-left flex flex-col justify-between shadow-xl"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="p-3 bg-gold-500/10 rounded-2xl border border-gold-500/30 text-gold-400">
+                  <div className="p-3 bg-rani-50 rounded-2xl border border-gold-500/40 text-rani-700">
                     {evt.icon === "Sun" ? <Sun className="w-6 h-6" /> : <Heart className="w-6 h-6" />}
                   </div>
-                  <span className="text-xs uppercase tracking-widest text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/20">
+                  <span className="text-xs uppercase tracking-wider text-rani-900 font-bold bg-gold-100 px-3 py-1 rounded-full border border-gold-400">
                     {evt.date.split(",")[0]}
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-serif font-bold text-cream-100 mb-2">{evt.title}</h3>
-                <p className="text-sm font-semibold text-gold-400 mb-3">{evt.date} • {evt.time}</p>
-                <p className="text-xs text-cream-200/80 leading-relaxed mb-6">{evt.description}</p>
+                <h3 className="text-2xl font-serif font-bold text-rani-950 mb-2">{evt.title}</h3>
+                <p className="text-sm font-bold text-gold-700 mb-3">{evt.date} • {evt.time}</p>
+                <p className="text-xs text-rani-900 leading-relaxed mb-6 font-medium">{evt.description}</p>
               </div>
 
               <button
                 onClick={() => downloadIcs(evt)}
-                className="w-full py-2.5 rounded-xl border border-gold-500/40 text-cream-100 text-xs font-semibold flex items-center justify-center gap-2 hover:bg-gold-500 hover:text-rani-950 transition"
+                className="w-full py-3 rounded-xl bg-rani-700 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-rani-800 transition shadow-md"
               >
-                <CalendarPlus className="w-4 h-4" /> कॅलेंडरमध्ये जोडा 📅
+                <CalendarPlus className="w-4 h-4" /> कॅलेंडरमध्ये सेव्ह करा 📅
               </button>
             </motion.div>
           ))}
