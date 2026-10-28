@@ -43,7 +43,7 @@ export default function Hero({ onOpenRsvp }) {
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-sm md:text-base text-rani-900 mb-8 font-medium">
           <div className="flex items-center gap-2 bg-glass-light px-4 py-2 rounded-full border border-gold-500/40 shadow-sm">
             <Calendar className="w-4 h-4 text-rani-600" />
-            <span>२५ नोव्हेंबर २०२६🎺🎷</span>
+            <span>२५ नोव्हेंबर २०२६ 🎺🎷</span>
           </div>
           <div className="flex items-center gap-2 bg-glass-light px-4 py-2 rounded-full border border-gold-500/40 shadow-sm">
             <MapPin className="w-4 h-4 text-rani-600" />
