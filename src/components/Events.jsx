@@ -21,7 +21,7 @@ export default function Events() {
       <div className="max-w-4xl mx-auto text-center">
         <p className="text-cream-200 font-script text-3xl mb-2">उत्सव कार्यक्रम 🎊</p>
         <h2 className="text-3xl md:text-5xl font-serif text-cream-gradient font-bold mb-12">
-          लग्न कार्यक्रम ✨
+         🎷 लग्न कार्यक्रम ✨
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8">
