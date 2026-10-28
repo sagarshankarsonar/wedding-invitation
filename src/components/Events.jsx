@@ -19,9 +19,9 @@ export default function Events() {
   return (
     <section id="events" className="py-20 px-6 bg-rani-900/30">
       <div className="max-w-4xl mx-auto text-center">
-        <p className="text-cream-200 font-script text-3xl mb-2">Celebration Schedule 🎊</p>
+        <p className="text-cream-200 font-script text-3xl mb-2">उत्सव कार्यक्रम 🎊</p>
         <h2 className="text-3xl md:text-5xl font-serif text-cream-gradient font-bold mb-12">
-          Wedding Events ✨
+          लग्न कार्यक्रम ✨
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -52,7 +52,7 @@ export default function Events() {
                 onClick={() => downloadIcs(evt)}
                 className="w-full py-2.5 rounded-xl border border-gold-500/40 text-cream-100 text-xs font-semibold flex items-center justify-center gap-2 hover:bg-gold-500 hover:text-rani-950 transition"
               >
-                <CalendarPlus className="w-4 h-4" /> Add to Calendar 📅
+                <CalendarPlus className="w-4 h-4" /> कॅलेंडरमध्ये जोडा 📅
               </button>
             </motion.div>
           ))}
