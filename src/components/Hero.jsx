@@ -14,7 +14,7 @@ export default function Hero({ onOpenRsvp }) {
       </motion.div>
 
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="z-10 max-w-3xl">
-        <p className="text-gold-600 font-script text-3xl md:text-4xl mb-2">|| श्री गणेशाय नमः || 💐</p>
+        <p className="text-gold-600 font-script text-3xl md:text-4xl mb-2">🙏 श्री गणेशाय नमः 🙏 💐</p>
         <p className="uppercase tracking-[0.3em] text-xs md:text-sm text-rani-800/80 mb-6 font-semibold">
           आपणास सस्नेह निमंत्रण 🎉
         </p>
@@ -28,11 +28,11 @@ export default function Hero({ onOpenRsvp }) {
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-sm md:text-base text-rani-900 mb-8 font-medium">
           <div className="flex items-center gap-2 bg-glass-light px-4 py-2 rounded-full border border-gold-500/40 shadow-sm">
             <Calendar className="w-4 h-4 text-rani-600" />
-            <span>२५ नोव्हेंबर २०२६</span>
+            <span>२५ नोव्हेंबर २०२६🎺🎷</span>
           </div>
           <div className="flex items-center gap-2 bg-glass-light px-4 py-2 rounded-full border border-gold-500/40 shadow-sm">
             <MapPin className="w-4 h-4 text-rani-600" />
-            <span>जैस्वाल लॉन्स, मुक्ताईनगर</span>
+            <span>जयस्वाल लॉन्स, मुक्ताईनगर</span>
           </div>
         </div>
 
@@ -47,7 +47,7 @@ export default function Hero({ onOpenRsvp }) {
             href="#events"
             className="px-8 py-3 bg-glass-light text-rani-900 font-semibold rounded-full border border-gold-500/50 hover:bg-cream-100 transition duration-300 shadow-sm"
           >
-            कार्यक्रम पत्रिका 📅
+            कार्यक्रम पत्रिका 📃
           </a>
         </div>
       </motion.div>
