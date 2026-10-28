@@ -54,7 +54,7 @@ export default function Hero({ onOpenRsvp }) {
         <div className="flex flex-wrap items-center justify-center gap-4">
           <button
             onClick={onOpenRsvp}
-            className="px-8 py-3 bg-gradient-to-r from-rani-600 to-rani-700 text-cream-50 font-bold rounded-full shadow-lg hover:brightness-110 transition duration-300 transform hover:scale-105"
+            className="px-8 py-3 bg-gradient-to-r from-rani-600 to-rani-700 text-rani-800/80 font-bold rounded-full shadow-lg hover:brightness-110 transition duration-300 transform hover:scale-105"
           >
             उपस्थिती कळवा (RSVP) 💌
           </button>
