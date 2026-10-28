@@ -9,9 +9,9 @@ export default function Location() {
   return (
     <section className="py-20 px-6 bg-rani-900/30">
       <div className="max-w-4xl mx-auto text-center">
-        <p className="text-cream-200 font-script text-3xl mb-2">Venue & Location 📍</p>
+        <p className="text-cream-200 font-script text-3xl mb-2"> स्थळ व पत्ता 📍</p>
         <h2 className="text-3xl md:text-5xl font-serif text-cream-gradient font-bold mb-4">
-          Where To Reach Us
+          आमच्या आनंदसोहळ्याचे ठिकाण 🏤
         </h2>
         <p className="text-sm text-cream-200/90 max-w-md mx-auto mb-8 flex items-center justify-center gap-2">
           <MapPin className="w-4 h-4 text-gold-400 shrink-0" />
@@ -41,7 +41,7 @@ export default function Location() {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-cream-200 via-gold-400 to-cream-300 text-rani-950 font-bold rounded-full shadow-lg hover:brightness-110 transition"
         >
-          <Navigation className="w-4 h-4" /> Get Directions on Google Maps 🗺️
+          <Navigation className="w-4 h-4" /> Google Maps वर मार्ग पहा 🗺️
         </a>
       </div>
     </section>
