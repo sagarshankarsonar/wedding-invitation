@@ -85,7 +85,7 @@ export default function GuestBook() {
       <div className="text-center mb-12">
         <p className="text-gold-600 font-script text-3xl mb-2">अभिप्राय व सदिच्छा संदेश 🎉💐❤️</p>
         <h2 className="text-3xl md:text-5xl font-serif text-rani-gradient font-bold">
-          💐 शुभेच्छा (पाहुण्यांची नोंदवही) 💌
+          💐 शुभेच्छा (पाहुण्यांची नोंदवही) ❤️
         </h2>
         
         <div className="mt-4 flex items-center justify-center gap-2">
@@ -132,7 +132,6 @@ export default function GuestBook() {
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="उदा. रमेश पाटील"
               className="w-full bg-cream-100 border border-gold-500/40 rounded-xl p-3 text-sm text-rani-900 focus:outline-none focus:border-rani-600"
             />
           </div>
