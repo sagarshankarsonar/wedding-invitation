@@ -9,9 +9,9 @@ export default function Invitees() {
       <div className="flex justify-center mb-3">
         <Users className="w-8 h-8 text-gold-400" />
       </div>
-      <p className="text-cream-200 font-script text-3xl mb-1">With Best Compliments From 💐</p>
+      <p className="text-cream-200 font-script text-3xl mb-1"> सस्नेह शुभेच्छुक 💐</p>
       <h2 className="text-2xl md:text-4xl font-serif text-cream-gradient font-bold mb-10">
-        Welcoming Family & Hosts
+         स्वागतकर्ता परिवार व यजमान 🤗 
       </h2>
 
       <div className="grid md:grid-cols-2 gap-6">
