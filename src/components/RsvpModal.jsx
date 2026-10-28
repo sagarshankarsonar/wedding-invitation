@@ -40,7 +40,7 @@ export default function RsvpModal({ isOpen, onClose }) {
 
             <div>
               <label className="block text-xs uppercase tracking-wider text-rani-900 font-bold mb-1">पूर्ण नाव</label>
-              <input required type="text" placeholder="उदा. रमेश पाटील" className="w-full bg-cream-50 border border-gold-500/60 rounded-xl p-3 text-sm text-rani-950 font-medium focus:outline-none focus:border-rani-700" />
+              <input required type="text" className="w-full bg-cream-50 border border-gold-500/60 rounded-xl p-3 text-sm text-rani-950 font-medium focus:outline-none focus:border-rani-700" />
             </div>
 
             <div>
