@@ -4,7 +4,7 @@ import { Calendar, MapPin } from "lucide-react";
 
 export default function Hero({ onOpenRsvp }) {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center text-center p-6 overflow-hidden bg-gradient-to-b from-cream-100 via-cream-200 to-amber-50 text-rani-900">
+    <section className="relative min-h-screen flex flex-col items-center justify-center text-center p-6 overflow-hidden bg-gradient-to-b from-cream-100 via-cream-200 to-amber-50 text-rani-950">
       {/* वरच्या बाजूला गोल गणेश प्रतिमा */}
       <motion.div 
       <motion.div 
@@ -36,7 +36,7 @@ export default function Hero({ onOpenRsvp }) {
         </p>
 
         <h1 className="text-4xl md:text-7xl font-serif text-rani-gradient font-bold mb-4 leading-tight">
-          सागर <span className="font-script text-gold-600 text-5xl md:text-8xl px-2">&</span> प्रियंका
+          सागर <span className="font-script text-gold-600 text-5xl md:text-8xl px-2">&</span> {'\u00A0'} प्रियंका
         </h1>
 
         <div className="w-32 h-[2px] bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto my-6" />
