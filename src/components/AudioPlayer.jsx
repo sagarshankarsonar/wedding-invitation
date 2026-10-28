@@ -29,7 +29,7 @@ export default function AudioPlayer() {
 
   return (
     <div className="fixed bottom-6 right-6 z-40">
-      <audio ref={audioRef} loop src="/audio/sangeet.mp3" />
+      <audio ref={audioRef} loop src="/music/sangeet.mp3" />
       <button
         onClick={toggleAudio}
         className="p-3.5 bg-rani-900 border-2 border-gold-500 rounded-full text-gold-300 shadow-2xl hover:scale-110 transition duration-300 flex items-center justify-center"
