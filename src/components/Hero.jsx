@@ -14,7 +14,7 @@ export default function Hero({ onOpenRsvp }) {
       </motion.div>
 
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="z-10 max-w-3xl">
-        <p className="text-gold-600 font-script text-3xl md:text-4xl mb-2">🙏 श्री गणेशाय नमः 🙏 💐</p>
+        <p className="text-gold-600 font-script text-3xl md:text-4xl mb-2">🙏 श्री गणेशाय नमः 🙏</p>
         <p className="uppercase tracking-[0.3em] text-xs md:text-sm text-rani-800/80 mb-6 font-semibold">
           आपणास सस्नेह निमंत्रण 🎉
         </p>
