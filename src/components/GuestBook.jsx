@@ -41,6 +41,18 @@ export default function GuestBook() {
     }
   };
 
+  // Handle Admin Login Authentication (Fixed crash)
+  const handleAdminAuth = (e) => {
+    e.preventDefault();
+    if (passcode === ADMIN_PASSCODE) {
+      setIsAdmin(true);
+      setShowAdminLogin(false);
+      setPasscode("");
+    } else {
+      alert("चुकीचा पासकोड! कृपया पुन्हा प्रयत्न करा.");
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!name.trim() || !wishes.trim()) return;
@@ -93,7 +105,7 @@ export default function GuestBook() {
           ) : (
             <button
               onClick={() => setShowAdminLogin(!showAdminLogin)}
-              className="text-xs text-rani-800/60 hover:text-rani-900 underline flex items-center gap-1"
+              className="text-xs text-rani-800/60 hover:text-rani-900 underline flex items-center gap-1 mx-auto"
             >
               <Key className="w-3 h-3" /> क्रिएटर लॉगिन
             </button>
@@ -107,9 +119,9 @@ export default function GuestBook() {
               placeholder="पासकोड टाका"
               value={passcode}
               onChange={(e) => setPasscode(e.target.value)}
-              className="bg-cream-100 border border-gold-500/50 rounded-lg px-3 py-1.5 text-xs text-rani-900 focus:outline-none"
+              className="bg-cream-100 border border-gold-500/50 rounded-lg px-3 py-1.5 text-xs text-rani-900 focus:outline-none w-full"
             />
-            <button type="submit" className="px-3 py-1.5 bg-cream-100 text-rani-800/80 font-bold text-xs rounded-lg">
+            <button type="submit" className="px-4 py-1.5 bg-rani-700 text-white font-bold text-xs rounded-lg whitespace-nowrap">
               अनलॉक
             </button>
           </form>
@@ -129,6 +141,7 @@ export default function GuestBook() {
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
+              placeholder="उदा. रमेश पाटील"
               className="w-full bg-cream-100 border border-gold-500/40 rounded-xl p-3 text-sm text-rani-900 focus:outline-none focus:border-rani-600"
             />
           </div>
@@ -165,7 +178,7 @@ export default function GuestBook() {
 
           <button
             type="submit"
-            className="w-full py-3.5 bg-gradient-to-r from-rani-600 to-rani-700 text-rani-800/80 font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg hover:brightness-110 transition"
+            className="w-full py-3.5 bg-gradient-to-r from-rani-600 to-rani-700 text-white font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg hover:brightness-110 transition"
           >
             <Send className="w-4 h-4" /> शुभेच्छा पाठवा 🎉
           </button>
