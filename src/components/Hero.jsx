@@ -7,12 +7,13 @@ export default function Hero({ onOpenRsvp }) {
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center p-6 overflow-hidden bg-gradient-to-b from-cream-100 via-cream-200 to-amber-50 text-rani-900">
       {/* वरच्या बाजूला गोल गणेश प्रतिमा */}
       <motion.div 
+      <motion.div 
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
-        className="mb-6 mt-4"
+        className="mb-3 pt-2"
       >
-        <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-gold-500 shadow-xl mx-auto bg-white flex items-center justify-center">
+        <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-4 border-gold-500 shadow-xl mx-auto bg-white flex items-center justify-center">
           <img 
             src="/images/ganesh.jpeg" 
             alt="Shree Ganesh" 
@@ -35,7 +36,7 @@ export default function Hero({ onOpenRsvp }) {
         </p>
 
         <h1 className="text-4xl md:text-7xl font-serif text-rani-gradient font-bold mb-4 leading-tight">
-          सागर <span className="font-script text-gold-600 text-5xl md:text-8xl">&</span> {" "} प्रियंका
+          सागर <span className="font-script text-gold-600 text-5xl md:text-8xl px-2">&</span> प्रियंका
         </h1>
 
         <div className="w-32 h-[2px] bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto my-6" />
