@@ -168,7 +168,7 @@ export default function GuestBook() {
 
           <button
             type="submit"
-            className="w-full py-3.5 bg-gradient-to-r from-rani-600 to-rani-700 text-cream-50 font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg hover:brightness-110 transition"
+            className="w-full py-3.5 bg-gradient-to-r from-rani-600 to-rani-700 text-rani-800/80 font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg hover:brightness-110 transition"
           >
             <Send className="w-4 h-4" /> शुभेच्छा पाठवा 🎉
           </button>
