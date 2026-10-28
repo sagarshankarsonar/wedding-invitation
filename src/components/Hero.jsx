@@ -5,12 +5,27 @@ import { Calendar, MapPin } from "lucide-react";
 export default function Hero({ onOpenRsvp }) {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center p-6 overflow-hidden bg-gradient-to-b from-cream-100 via-cream-200 to-amber-50 text-rani-900">
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-        className="absolute w-[600px] h-[600px] border border-gold-500/20 rounded-full pointer-events-none flex items-center justify-center"
+      {/* वरच्या बाजूला गोल गणेश प्रतिमा */}
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        className="mb-6 mt-4"
       >
-        <div className="w-[450px] h-[450px] border border-gold-500/30 rounded-full border-dashed" />
+        <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-gold-500 shadow-xl mx-auto bg-white flex items-center justify-center">
+          <img 
+            src="/images/ganesh.jpeg" 
+            alt="Shree Ganesh" 
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              e.target.style.display = 'none';
+              e.target.nextSibling.style.display = 'flex';
+            }}
+          />
+          <div className="hidden absolute inset-0 items-center justify-center text-rani-900 font-serif text-2xl font-bold">
+            ॐ
+          </div>
+        </div>
       </motion.div>
 
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="z-10 max-w-3xl">
