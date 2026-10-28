@@ -27,7 +27,7 @@ export default function Home() {
 
       {/* फुटर - पूर्णपणे मराठीत आणि स्पष्ट दृश्यमान */}
       <footer className="py-8 text-center text-xs md:text-sm text-cream-100 font-semibold border-t border-gold-500/30 bg-rani-950">
-        <p>🙏 सस्नेह सहर्ष स्वागत • सोनार परिवार, मुक्ताईनगर 🌸🌼🙏</p>
+        <p>🙏 सस्नेह सहर्ष स्वागत 🌸🌼 • सोनार परिवार, मुक्ताईनगर 🙏</p>
         <p className="mt-1 text-gold-400">सागर आणि प्रियंका यांच्या शुभविवाह सोहळ्याकरिता निमंत्रित 💌✨</p>
       </footer>
 
