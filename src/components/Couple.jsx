@@ -25,7 +25,6 @@ export default function Couple() {
 
           <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-gold-500 shadow-xl mb-6 relative bg-cream-200 flex items-center justify-center">
             <img src={groom.image} alt={groom.name} className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; }} />
-            <span className="absolute text-rani-900 font-serif font-bold text-5xl">S</span>
           </div>
           <h3 className="text-2xl font-serif text-rani-900 font-bold mb-1">{groom.name}</h3>
           <p className="text-sm text-gold-600 font-semibold mb-2">{groom.title}</p>
@@ -43,7 +42,6 @@ export default function Couple() {
 
           <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-rani-600 shadow-xl mb-6 relative bg-cream-200 flex items-center justify-center">
             <img src={bride.image} alt={bride.name} className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; }} />
-            <span className="absolute text-rani-600 font-serif font-bold text-5xl">P</span>
           </div>
           <h3 className="text-2xl font-serif text-rani-900 font-bold mb-1">{bride.name}</h3>
           <p className="text-sm text-gold-600 font-semibold mb-2">{bride.title}</p>
