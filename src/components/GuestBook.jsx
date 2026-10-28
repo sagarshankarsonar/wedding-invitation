@@ -30,18 +30,11 @@ export default function GuestBook() {
       setMessages([
         {
           id: 1,
-          name: "सुनील व मिराबाई सोनार",
-          text: "💐 सागर आणि प्रियंका तुम्हा दोघांनाही वैवाहिक आयुष्याच्या मनःपूर्वक शुभेच्छा! तुमचा संसार सुख-समृद्धीने नांदाव्यात 🎉",
-          emoji: "💐",
-          date: "२४ नोव्हेंबर",
-        },
-        {
-          id: 2,
           name: "मोहन व सीमाबाई सोनार",
-          text: "❤️ हार्दिक अभिनंदन! जोडी अशीच सदैव आनंदी राहो ✨",
+          text: "💐 सागर आणि प्रियंका तुम्हा दोघांनाही वैवाहिक आयुष्याच्या मनःपूर्वक शुभेच्छा! तुमचा संसार सुख-समृद्धीने नांदो 🎉, जोडी अशीच सदैव आनंदी राहो ✨",
           emoji: "❤️",
-          date: "२४ नोव्हेंबर",
-        },
+          date: "०१ नोव्हेंबर",
+        }
       ]);
     }
   }, []);
@@ -83,7 +76,7 @@ export default function GuestBook() {
       setShowAdminLogin(false);
       setPasscode("");
     } else {
-      alert("चुकलेला पासवर्ड!");
+      alert("पासकोड चुकीचा आहे, पुन्हा प्रयत्न करा!(हे फक्त ऍडमीन साठी आहे)");
     }
   };
 
@@ -92,7 +85,7 @@ export default function GuestBook() {
       <div className="text-center mb-12">
         <p className="text-gold-600 font-script text-3xl mb-2">अभिप्राय व सदिच्छा संदेश 🎉💐❤️</p>
         <h2 className="text-3xl md:text-5xl font-serif text-rani-gradient font-bold">
-          शुभेच्छा भिंत (Guest Book) 💌
+          💐 शुभेच्छा (पाहुण्यांची नोंदवही) 💌
         </h2>
         
         <div className="mt-4 flex items-center justify-center gap-2">
@@ -105,7 +98,7 @@ export default function GuestBook() {
               onClick={() => setShowAdminLogin(!showAdminLogin)}
               className="text-xs text-rani-800/60 hover:text-rani-900 underline flex items-center gap-1"
             >
-              <Key className="w-3 h-3" /> क्रिएटर लॉगिन (डॅशबोर्ड)
+              <Key className="w-3 h-3" /> क्रिएटर लॉगिन
             </button>
           )}
         </div>
@@ -114,7 +107,7 @@ export default function GuestBook() {
           <form onSubmit={handleAdminAuth} className="mt-4 max-w-xs mx-auto flex gap-2">
             <input
               type="password"
-              placeholder="पासकोड टाका (sagar2026)"
+              placeholder="पासकोड टाका"
               value={passcode}
               onChange={(e) => setPasscode(e.target.value)}
               className="bg-cream-100 border border-gold-500/50 rounded-lg px-3 py-1.5 text-xs text-rani-900 focus:outline-none"
