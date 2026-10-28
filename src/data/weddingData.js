@@ -3,7 +3,7 @@ export const weddingDetails = {
     name: "Sagar Shankar Sonar",
     title: "Groom (Cream Sherwani 🧥)",
     parents: "Son of Mr. Shankar Sonar",
-    image: "/images/groom.jpg",
+    image: "/images/groom.png",
   },
   bride: {
     name: "Priyanka Rajendra Sonar",
