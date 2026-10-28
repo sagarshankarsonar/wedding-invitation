@@ -41,7 +41,7 @@ export default function GuestBook() {
     }
   };
 
-  // Handle Admin Login Authentication (Fixed crash)
+  // Handle Admin Login Authentication
   const handleAdminAuth = (e) => {
     e.preventDefault();
     if (passcode === ADMIN_PASSCODE) {
