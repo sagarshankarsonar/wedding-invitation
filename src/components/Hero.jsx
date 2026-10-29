@@ -5,14 +5,24 @@ import { Calendar, MapPin } from "lucide-react";
 export default function Hero({ onOpenRsvp }) {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center p-6 overflow-hidden bg-gradient-to-b from-cream-100 via-cream-200 to-amber-50 text-rani-950">
-      {/* वरच्या बाजूला गोल गणेश प्रतिमा */}
-      <motion.div
+      {/* १. श्री गणेशाय नमः (Top Header) */}
+      <motion.p 
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-gold-700 font-serif text-2xl md:text-3xl font-extrabold mb-4 tracking-wide"
+      >
+       🙏 || श्री गणेशाय नमः || 🙏
+      </motion.p>
+
+      {/* २. श्री गणेश प्रतिमा (Middle Image) */}
+      <motion.div 
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
         className="mb-4"
       >
-        <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-gold-500 shadow-xl mx-auto bg-white flex items-center justify-center">
+        <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-gold-500 shadow-xl mx-auto bg-white flex items-center justify-center">
           <img 
             src="/images/ganesh.jpeg" 
             alt="Shree Ganesh" 
@@ -22,10 +32,23 @@ export default function Hero({ onOpenRsvp }) {
               e.target.nextSibling.style.display = 'flex';
             }}
           />
-          <div className="hidden absolute inset-0 items-center justify-center text-rani-900 font-serif text-2xl font-bold">
+          <div className="hidden absolute inset-0 items-center justify-center text-rani-900 font-serif text-3xl font-bold">
             ॐ
           </div>
         </div>
+      </motion.div>
+
+      {/* ३. गणेश श्लोक (Quote Below Image) */}
+      <motion.div 
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="mb-6 max-w-md mx-auto"
+      >
+        <p className="text-gold-800 font-serif text-sm md:text-base font-bold leading-relaxed px-4 py-2 border-y border-gold-400/50 bg-gold-50/40 rounded-lg shadow-sm">
+          || वक्रतुंड महाकाय सूर्यकोटि समप्रभ || <br />
+          निर्विघ्नं कुरुमेदेव सर्वकार्येषुसर्वदा ||
+        </p>
       </motion.div>
 
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="z-10 max-w-3xl">
