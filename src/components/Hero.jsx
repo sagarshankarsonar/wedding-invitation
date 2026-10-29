@@ -12,7 +12,7 @@ export default function Hero({ onOpenRsvp }) {
         transition={{ duration: 0.6 }}
         className="text-gold-700 font-serif text-2xl md:text-3xl font-extrabold mb-4 tracking-wide"
       >
-        <p className="text-gold-600 font-script text-3xl md:text-4xl mb-2">🙏 || श्री गणेशाय नमः || 🙏</p>
+        <p className="text-gold-600 font-script text-3xl md:text-4xl mb-2">🙏 श्री गणेशाय नमः 🙏</p>
       </motion.p>
 
       {/* २. श्री गणेश प्रतिमा (Middle Image) */}
