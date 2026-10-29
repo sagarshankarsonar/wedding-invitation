@@ -90,7 +90,7 @@ export default function RsvpModal({ isOpen, onClose }) {
               />
             </div>
 
-            <button type="submit" className="w-full py-3.5 bg-rani-700 text-white font-bold rounded-xl shadow-lg hover:bg-rani-800 transition mt-2 flex items-center justify-center gap-2">
+            <button type="submit" className="w-full py-3.5 bg-rani-800 text-white font-bold rounded-xl shadow-lg hover:bg-rani-800 transition mt-2 flex items-center justify-center gap-2">
               <MessageSquare className="w-4 h-4" /> उपस्थिती कन्फर्म करा ✅
             </button>
           </form>
