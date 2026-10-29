@@ -121,7 +121,7 @@ export default function GuestBook() {
               onChange={(e) => setPasscode(e.target.value)}
               className="bg-cream-100 border border-gold-500/50 rounded-lg px-3 py-1.5 text-xs text-rani-900 focus:outline-none w-full"
             />
-            <button type="submit" className="px-4 py-1.5 bg-rani-700 text-white font-bold text-xs rounded-lg whitespace-nowrap">
+            <button type="submit" className="px-4 py-1.5 bg-rani-800 text-white font-bold text-xs rounded-lg whitespace-nowrap hover:bg-rani-800">
               अनलॉक
             </button>
           </form>
