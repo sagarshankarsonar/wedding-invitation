@@ -141,7 +141,6 @@ export default function GuestBook() {
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="उदा. रमेश पाटील"
               className="w-full bg-cream-100 border border-gold-500/40 rounded-xl p-3 text-sm text-rani-900 focus:outline-none focus:border-rani-600"
             />
           </div>
@@ -178,7 +177,7 @@ export default function GuestBook() {
 
           <button
             type="submit"
-            className="w-full py-3.5 bg-gradient-to-r from-rani-600 to-rani-700 text-white font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg hover:brightness-110 transition"
+            className="w-full py-3.5 bg-gradient-to-r from-rani-600 to-rani-700 bg-rani-800 text-white font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg hover:bg-rani-800 hover:brightness-110 transition"
           >
             <Send className="w-4 h-4" /> शुभेच्छा पाठवा 🎉
           </button>
