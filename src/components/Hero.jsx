@@ -69,7 +69,7 @@ export default function Hero({ onOpenRsvp }) {
           </div>
           <div className="flex items-center gap-2 bg-glass-light px-4 py-2 rounded-full border border-gold-500/40 shadow-sm">
             <MapPin className="w-4 h-4 text-rani-600" />
-            <span>जयस्वाल लॉन्स, मुक्ताईनगर</span>
+            <span>जयस्वाल लॉन्स, सालबर्डी रोड, मुक्ताईनगर </span>
           </div>
         </div>
 
