@@ -36,7 +36,7 @@ export default function RsvpModal({ isOpen, onClose }) {
             <h3 className="text-2xl font-serif text-rani-950 font-extrabold text-center mb-1">
               उपस्थिती नोंदणी (RSVP) 💌
             </h3>
-            <p className="text-xs text-center text-rani-900 font-medium mb-4">कृपया आपल्या उपस्थित Labout माहिती द्या</p>
+            <p className="text-xs text-center text-rani-900 font-medium mb-4">कृपया आपल्या उपस्थित बद्दल माहिती द्या</p>
 
             <div>
               <label className="block text-xs uppercase tracking-wider text-rani-900 font-bold mb-1">पूर्ण नाव</label>
