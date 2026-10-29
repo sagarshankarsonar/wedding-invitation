@@ -2,8 +2,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
-import { Send, Sparkles, Trash2, ShieldCheck, Key } from "lucide-react";
-import { supabase } from "@/utils/supabase"; // Import supabase client
+import { Send, Sparkles, Trash2, Edit3, ShieldCheck, Key, X, Check } from "lucide-react";
+import { supabase } from "@/utils/supabase";
 
 const EMOJI_OPTIONS = ["❤️", "💐", "🎉", "🎊", "✨", "💌", "🎁", "🙌", "🎀", "🙂"];
 
@@ -16,15 +16,18 @@ export default function GuestBook() {
   const [showAdminLogin, setShowAdminLogin] = useState(false);
   const [passcode, setPasscode] = useState("");
 
+  // Edit states
+  const [editingId, setEditingId] = useState(null);
+  const [editName, setEditName] = useState("");
+  const [editWishes, setEditWishes] = useState("");
+
   const ADMIN_PASSCODE = "piyu143";
 
-  // Fetch messages from Supabase on load
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get("admin") === "true") {
       setIsAdmin(true);
     }
-
     fetchMessages();
   }, []);
 
@@ -41,7 +44,6 @@ export default function GuestBook() {
     }
   };
 
-  // Handle Admin Login Authentication
   const handleAdminAuth = (e) => {
     e.preventDefault();
     if (passcode === ADMIN_PASSCODE) {
@@ -50,6 +52,7 @@ export default function GuestBook() {
       setPasscode("");
     } else {
       alert("चुकीचा पासकोड! कृपया पुन्हा प्रयत्न करा. (नोंद: हा अधिकार फक्त ऍडमीन यूजर साठी आहे)");
+
     }
   };
 
@@ -57,7 +60,6 @@ export default function GuestBook() {
     e.preventDefault();
     if (!name.trim() || !wishes.trim()) return;
 
-    // Generate date and time format: "29 Oct 2026, 8:45 am"
     const now = new Date();
     const formattedDate = now.toLocaleDateString("en-GB", {
       day: "2-digit",
@@ -73,10 +75,9 @@ export default function GuestBook() {
       name: name.trim(),
       text: `${selectedEmoji} ${wishes.trim()}`,
       emoji: selectedEmoji,
-      date: formattedDate, // Sends the full date and time string
+      date: formattedDate,
     };
 
-    // Insert into Supabase
     const { error } = await supabase.from("wedding_wishes").insert([newMessage]);
 
     if (error) {
@@ -86,17 +87,51 @@ export default function GuestBook() {
       setName("");
       setWishes("");
       confetti({ particleCount: 90, spread: 70, origin: { y: 0.75 } });
-      fetchMessages(); // Refresh list
+      fetchMessages();
     }
   };
-  
+
+  // Start editing a message
+  const startEditing = (msg) => {
+    setEditingId(msg.id);
+    setEditName(msg.name);
+    // Remove emoji prefix if present for clean editing
+    const cleanText = msg.text.replace(/^[❤️💐🎉🎊✨💌🎁🙌🎀🙂]\s*/, "");
+    setEditWishes(cleanText);
+  };
+
+  // Save updated message
+  const handleUpdate = async (id) => {
+    if (!editName.trim() || !editWishes.trim()) return;
+
+    const updatedText = `✨ ${editWishes.trim()}`;
+
+    const { error } = await supabase
+      .from("wedding_wishes")
+      .update({ name: editName.trim(), text: updatedText })
+      .eq("id", id);
+
+    if (error) {
+      console.error("Error updating message:", error);
+      alert("अपडेट करताना अडचण आली.");
+    } else {
+      setEditingId(null);
+      fetchMessages();
+    }
+  };
+
   const handleDelete = async (id) => {
     if (confirm("तुम्हाला हा संदेश खरोखर डिलीट करायचा आहे का?")) {
-      const { error } = await supabase.from("wedding_wishes").delete().eq("id", id);
+      const { error } = await supabase
+        .from("wedding_wishes")
+        .delete()
+        .eq("id", id);
+
       if (error) {
         console.error("Error deleting message:", error);
+        alert("डिलिट करताना अडचण आली: ");
       } else {
-        fetchMessages(); // Refresh list
+        setMessages((prevMessages) => prevMessages.filter((msg) => msg.id !== id));
       }
     }
   };
@@ -112,7 +147,7 @@ export default function GuestBook() {
         <div className="mt-4 flex items-center justify-center gap-2">
           {isAdmin ? (
             <span className="inline-flex items-center gap-1.5 text-xs bg-rani-600/10 text-rani-900 border border-rani-600/30 px-3 py-1 rounded-full font-medium">
-              <ShieldCheck className="w-3.5 h-3.5 text-rani-600" /> क्रिएटर मोड सुरू आहे (डिलीट अधिकार उपलब्ध)
+              <ShieldCheck className="w-3.5 h-3.5 text-rani-600" /> क्रिएटर मोड सुरू आहे
             </span>
           ) : (
             <button
@@ -205,24 +240,72 @@ export default function GuestBook() {
                 exit={{ opacity: 0, x: -50 }}
                 className="bg-glass-light p-4 rounded-2xl border border-gold-500/20 text-left relative group shadow-sm"
               >
-                <div className="flex items-center justify-between mb-1.5">
-                  <span className="font-serif text-sm font-bold text-rani-900 flex items-center gap-1.5">
-                    {msg.name}
-                  </span>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] text-rani-800/60 font-medium">{msg.date}</span>
-                    {isAdmin && (
+                {editingId === msg.id ? (
+                  /* Edit Mode */
+                  <div className="space-y-3">
+                    <input
+                      type="text"
+                      value={editName}
+                      onChange={(e) => setEditName(e.target.value)}
+                      className="w-full bg-white border border-gold-500 rounded-lg p-2 text-xs text-rani-900 focus:outline-none"
+                      placeholder="नाव"
+                    />
+                    <textarea
+                      rows="2"
+                      value={editWishes}
+                      onChange={(e) => setEditWishes(e.target.value)}
+                      className="w-full bg-white border border-gold-500 rounded-lg p-2 text-xs text-rani-900 focus:outline-none"
+                      placeholder="संदेश"
+                    />
+                    <div className="flex justify-end gap-2">
                       <button
-                        onClick={() => handleDelete(msg.id)}
-                        className="text-rose-600 hover:text-rose-800 p-1 bg-rose-50 rounded-md transition"
-                        title="हा मेसेज डिलीट करा"
+                        onClick={() => setEditingId(null)}
+                        className="px-3 py-1 bg-gray-200 text-gray-700 text-xs rounded-lg flex items-center gap-1"
                       >
-                        <Trash2 className="w-3.5 h-3.5" />
+                        <X className="w-3 h-3" /> रద్దు करा
                       </button>
-                    )}
+                      <button
+                        onClick={() => handleUpdate(msg.id)}
+                        className="px-3 py-1 bg-rani-700 text-white text-xs rounded-lg flex items-center gap-1"
+                      >
+                        <Check className="w-3 h-3" /> सेव्ह करा
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <p className="text-xs text-rani-900/90 leading-relaxed font-sans">{msg.text}</p>
+                ) : (
+                  /* Normal View Mode */
+                  <>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="font-serif text-sm font-bold text-rani-900 flex items-center gap-1.5">
+                        {msg.name}
+                      </span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] text-rani-800/60 font-medium">{msg.date}</span>
+                        
+                        {/* Edit Button (Visible to everyone for their comments or Admin) */}
+                        <button
+                          onClick={() => startEditing(msg)}
+                          className="text-blue-600 hover:text-blue-800 p-1 bg-blue-50 rounded-md transition"
+                          title="मेसेज एडिट करा"
+                        >
+                          <Edit3 className="w-3.5 h-3.5" />
+                        </button>
+
+                        {/* Delete Button (Visible if Admin or Owner) */}
+                        {(isAdmin || editingId === msg.id) && (
+                          <button
+                            onClick={() => handleDelete(msg.id)}
+                            className="text-rose-600 hover:text-rose-800 p-1 bg-rose-50 rounded-md transition"
+                            title="हा मेसेज डिलीट करा"
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                    <p className="text-xs text-rani-900/90 leading-relaxed font-sans">{msg.text}</p>
+                  </>
+                )}
               </motion.div>
             ))}
           </AnimatePresence>
