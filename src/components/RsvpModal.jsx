@@ -61,7 +61,6 @@ export default function RsvpModal({ isOpen, onClose }) {
                 type="text" 
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="उदा. रमेश पाटील" 
                 className="w-full bg-cream-50 border border-gold-500/60 rounded-xl p-3 text-sm text-rani-950 font-medium focus:outline-none focus:border-rani-700" 
               />
             </div>
