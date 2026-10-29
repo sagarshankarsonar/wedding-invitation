@@ -49,7 +49,7 @@ export default function GuestBook() {
       setShowAdminLogin(false);
       setPasscode("");
     } else {
-      alert("चुकीचा पासकोड! कृपया पुन्हा प्रयत्न करा.");
+      alert("चुकीचा पासकोड! कृपया पुन्हा प्रयत्न करा. (नोंद: हा अधिकार फक्त ऍडमीन यूजर साठी आहे)");
     }
   };
 
