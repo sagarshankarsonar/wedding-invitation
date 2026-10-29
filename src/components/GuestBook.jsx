@@ -57,11 +57,23 @@ export default function GuestBook() {
     e.preventDefault();
     if (!name.trim() || !wishes.trim()) return;
 
+    // Generate date and time format: "29 Oct 2026, 8:45 am"
+    const now = new Date();
+    const formattedDate = now.toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    }) + ", " + now.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    }).toLowerCase();
+
     const newMessage = {
       name: name.trim(),
       text: `${selectedEmoji} ${wishes.trim()}`,
       emoji: selectedEmoji,
-      date: new Date().toLocaleDateString("en-IN", { month: "short", day: "numeric" }),
+      date: formattedDate, // Sends the full date and time string
     };
 
     // Insert into Supabase
@@ -77,7 +89,7 @@ export default function GuestBook() {
       fetchMessages(); // Refresh list
     }
   };
-
+  
   const handleDelete = async (id) => {
     if (confirm("तुम्हाला हा संदेश खरोखर डिलीट करायचा आहे का?")) {
       const { error } = await supabase.from("wedding_wishes").delete().eq("id", id);
