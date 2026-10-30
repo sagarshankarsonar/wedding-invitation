@@ -183,7 +183,7 @@ export default function GuestBook() {
               rows="3"
               value={wishes}
               onChange={(e) => setWishes(e.target.value)}
-              placeholder="सागर आणि प्रियंका यांच्यासाठी तुमचे आशीर्वाद लिहा..."
+              placeholder="सागर आणि प्रियंका यांच्यासाठी तुमच्या शुभेच्छा लिहा..."
               className="w-full bg-cream-100 border border-gold-500/40 rounded-xl p-3 text-sm text-rani-900 focus:outline-none focus:border-rani-600"
             />
           </div>
