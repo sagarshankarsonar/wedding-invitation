@@ -50,7 +50,7 @@ export default function RsvpModal({ isOpen, onClose }) {
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <h3 className="text-2xl font-serif text-rani-950 font-extrabold text-center mb-1">
-              उपस्थिती नोंदणी (RSVP) 💌
+              उपस्थिती नोंदणी 💌
             </h3>
             <p className="text-xs text-center text-rani-900 font-medium mb-4">कृपया आपल्या उपस्थितीची माहिती द्या</p>
 
